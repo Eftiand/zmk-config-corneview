@@ -5,8 +5,8 @@
 */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 
 / {
     behaviors {
@@ -20,6 +20,7 @@
             bindings = <&kp>, <&kp>;
         };
     };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -29,24 +30,27 @@
             // | CTRL  |  A  |  S  |  D  |  F  |  G  |     |  H  |  J    |  K  |  L  |  Ö  |  Ä   |
             // | SHFT  |  Z  |  X  |  C  |  V  |  B  |     |  N  |  M    |  ,  |  .  |  -  |  ESC  |
             //                               | GUI | LWR | SPC |     | ENT | RSE  | ALT |
+
             bindings = <
-                &kp TAB  &kp Q    &kp W    &kp E    &kp R    &kp T      &kp Y    &kp U     &kp I      &kp O     &kp P     &kp AA
-                &kp LCTRL &kp A    &kp S    &kp D    &kp F    &kp G      &kp H    &kp J     &kp K      &kp L     &kp OE    &kp AE
-                &kp LSHFT &kp Z    &kp X    &kp C    &kp V    &kp B      &kp N    &kp M     &kp COMMA  &kp DOT   &kp MINUS  &kp ESC
-                &kp LGUI &mo 1     &kp SPACE  &kp RET  &mo 2     &kp RALT
+&kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y    &kp U  &kp I      &kp O    &kp P      &kp LBKT
+&kp LCTRL  &kp A  &kp S  &kp D     &kp F  &kp G        &kp H    &kp J  &kp K      &kp L    &kp SEMI   &kp SQT
+&kp LSHFT  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp MINUS  &lt 3 ESCAPE
+                         &kp LGUI  &mo 1  &kp SPACE    &kp RET  &mo 2  &kp RALT
             >;
         };
+
         lower_layer {
             // -----------------------------------------------------------------------------------------
             // |  TAB  |  1  |  2  |  3  |  4  |  5  |     |  6  |  7  |  8  |  9  |  0  |  BSPC  |
             // | BTCLR | BT1 | BT2 | BT3 | BT4 | BT5 |     | LFT | DWN |  UP | RGT |     |       |
             // | SHFT  |     |     |     |     |     |     |     |     |     |     |     |       |
             //                               | GUI |     | SPC |     | ENT |     | ALT |
+
             bindings = <
-                &kp TAB     &kp N1       &kp N2       &kp N3       &kp N4       &kp N5          &kp N6       &kp N7       &kp N8      &kp N9      &kp N0       &kp BSPC
-                &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4     &kp LEFT     &kp DOWN     &kp UP        &kp RIGHT    &trans      &trans
-                &kp LSHFT    &trans      &trans       &trans       &trans       &trans         &trans      &trans       &trans     &trans      &trans      &trans
-                &kp LGUI      &trans       &kp SPACE     &kp RET      &trans        &kp RALT
+&kp TAB     &kp NUMBER_1  &kp N2        &kp N3        &kp N4        &kp N5          &kp N6    &kp N7    &kp N8    &kp N9     &trans  &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans  &trans
+&kp LSHFT   &trans        &trans        &trans        &trans        &trans          &trans    &trans    &trans    &trans     &trans  &trans
+                                        &kp LGUI      &trans        &kp SPACE       &kp RET   &trans    &kp RALT
             >;
         };
 
@@ -56,11 +60,21 @@
             // | CTRL  |     |     |     |     |     |     |     |     |  [  |  ]  |  \  |  `    |
             // | SHFT  |  <  |  @  |  £  |  $  |  €  |     |  {  |  }  |  ´  |  `  |  |  |  ~    |
             //                               | GUI |     | SPC |     | ENT |     | ALT |
+
             bindings = <
-                &kp TAB     &kp LS(N1)  &kp LS(N2)  &kp LS(N3)  &kp RA(N4)  &kp LS(N5)      &kp LS(N6)  &kp LS(N7)   &kp LS(N8)  &kp LS(N9) &kp LS(N0)  &kp DEL
-                &kp LCTRL    &trans     &trans     &trans     &trans     &trans         &trans     &trans     &kp LBKT    &kp RBKT    &kp BSLH     &kp GRAVE
-                &kp LSHFT   &kp NUBS   &kp RA(N2)  &kp RA(N3)  &kp RA(N4)  &kp RA(N5)         &kp RA(N7)  &kp RA(N8)   &kp LS(AE)  &kp RA(AE)  &kp PIPE    &kp TILDE
-                &kp LGUI      &trans      &kp SPACE    &kp RET      &trans        &kp RALT
+&kp TAB    &kp LS(N1)  &kp LS(N2)  &kp LS(N3)  &kp RA(N4)  &kp LS(N5)    &kp LS(LEFT_PARENTHESIS)  &kp LS(RIGHT_PARENTHESIS)  &kp LS(SLASH)   &kp LS(NON_US_BACKSLASH)  &kp LS(N0)  &kp DEL
+&kp LCTRL  &trans      &trans      &trans      &trans      &trans        &kp LEFT_BRACKET          &kp RIGHT_BRACKET          &kp LEFT_BRACE  &kp RIGHT_BRACE           &kp BSLH    &kp GRAVE
+&kp LSHFT  &kp LA(N1)  &kp RA(N2)  &kp RA(N3)  &kp RA(N4)  &kp RA(N5)    &kp RA(LESS_THAN)         &kp RA(GREATER_THAN)       &kp LS(DOLLAR)  &kp RA(AT_SIGN)           &kp PIPE    &kp TILDE
+                                   &kp LGUI    &trans      &kp SPACE     &kp RET                   &trans                     &kp RALT
+            >;
+        };
+
+        layer_3 {
+            bindings = <
+&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6    &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans   &trans   &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans   &trans   &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
