@@ -46,10 +46,10 @@
             //                               | GUI |     | SPC |     | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &kp NUMBER_1  &kp N2  &kp N3    &kp N4  &kp N5     &kp N6     &kp N7    &kp N8    &kp N9     &trans  &kp BACKSPACE
-&trans     &trans        &trans  &trans    &trans  &trans     &kp LEFT   &kp DOWN  &kp UP    &kp RIGHT  &trans  &trans
-&kp LSHFT  &trans        &trans  &trans    &trans  &trans     &trans     &trans    &trans    &trans     &trans  &trans
-                                 &kp LGUI  &trans  &kp RET    &kp SPACE  &trans    &kp RALT
+&kp LESS_THAN      &kp NUMBER_1  &kp N2  &kp N3    &kp N4  &kp N5     &kp N6     &kp N7    &kp N8    &kp N9     &trans  &kp BACKSPACE
+&kp LS(LESS_THAN)  &trans        &trans  &trans    &trans  &trans     &kp LEFT   &kp DOWN  &kp UP    &kp RIGHT  &trans  &trans
+&kp LSHFT          &trans        &trans  &trans    &trans  &trans     &trans     &trans    &trans    &trans     &trans  &trans
+                                         &kp LGUI  &trans  &kp RET    &kp SPACE  &trans    &kp RALT
             >;
         };
 
@@ -61,19 +61,19 @@
             //                               | GUI |     | SPC |     | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &kp LS(N1)      &kp LS(N2)      &kp LS(N3)      &kp RA(N4)      &kp LS(N5)        &kp LS(NUMBER_6)  &kp LS(N7)      &kp LS(N8)      &kp LS(N9)      &kp LS(N0)      &kp BACKSPACE
-&kp LCTRL  &kp LS(LA(N1))  &kp LS(LA(N2))  &kp LS(LA(N3))  &kp LS(LA(N4))  &kp LA(LS(N5))    &kp LS(LA(N6))    &kp LS(LA(N7))  &kp LA(LS(N8))  &kp LA(LS(N9))  &kp LA(LS(N0))  &kp BACKSLASH
-&kp LSHFT  &kp LA(N1)      &kp RA(N2)      &kp RA(N3)      &kp RA(N4)      &kp RA(N5)        &kp RA(NUMBER_6)  &kp RA(N7)      &kp RA(N8)      &kp RA(N9)      &kp RA(N0)      &kp TILDE
-                                           &kp LGUI        &trans          &kp SPACE         &kp RET           &trans          &kp RALT
+&kt LS(LESS_THAN)  &kp LS(N1)      &kp LS(N2)      &kp LS(N3)      &kp RA(N4)      &kp LS(N5)        &kp LS(NUMBER_6)  &kp LS(N7)      &kp LS(N8)      &kp LS(N9)      &kp LS(N0)      &kp BACKSPACE
+&kp LCTRL          &kp LS(LA(N1))  &kp LS(LA(N2))  &kp LS(LA(N3))  &kp LS(LA(N4))  &kp LA(LS(N5))    &kp LS(LA(N6))    &kp LS(LA(N7))  &kp LA(LS(N8))  &kp LA(LS(N9))  &kp LA(LS(N0))  &kp BACKSLASH
+&kp LSHFT          &kp LA(N1)      &kp RA(N2)      &kp RA(N3)      &kp RA(N4)      &kp RA(N5)        &kp RA(NUMBER_6)  &kp RA(N7)      &kp RA(N8)      &kp RA(N9)      &kp RA(N0)      &kp TILDE
+                                                   &kp LGUI        &trans          &kp SPACE         &kp RET           &trans          &kp RALT
             >;
         };
 
         layer_3 {
             bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6    &kp F7          &kp F8      &kp F9      &kp F10  &kp F11  &kp F12
-&trans  &trans  &trans  &trans  &trans  &trans    &kp C_PREVIOUS  &kp C_PLAY  &kp C_NEXT  &trans   &trans   &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans          &trans      &trans      &trans   &trans   &trans
-                        &trans  &trans  &trans    &trans          &trans      &trans
+&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6    &kp F7          &kp F8        &kp F9      &kp F10  &kp F11  &kp F12
+&trans  &trans  &trans  &trans  &trans  &trans    &kp C_PREVIOUS  &kp C_PLAY    &kp C_NEXT  &trans   &trans   &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp C_VOL_DN    &kp C_VOL_UP  &trans      &trans   &trans   &trans
+                        &trans  &trans  &trans    &trans          &trans        &trans
             >;
         };
     };
